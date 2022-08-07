@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const logoutUser = () => {
     localStorage.removeItem('myToken');
-    window.location.href = '/review';
+    window.location.href = '/';
   }
 
 
