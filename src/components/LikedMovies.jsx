@@ -20,7 +20,7 @@ useEffect(()=>{
             const cUser = jwtDecode(jwt1);
             setUser(cUser.currentUser);
             console.log(cUser.currentUser);
-            await axios.get(`https://popcorn-movie-review.herokuapp/liked-movies/${cUser.currentUser}`)
+            await axios.get(`https://popcorn-movie-review.herokuapp.com/liked-movies/${cUser.currentUser}`)
                 .then(res => {
                     setLikedMovies(res.data);
                     console.log(likedMovies);
@@ -40,13 +40,13 @@ const deleteMovie = async(movie)=>{
         movie: movie.Title
     }
     console.log(details);
-    await axios.post("https://popcorn-movie-review.herokuapp/delete-movie" , details)
+    await axios.post("https://popcorn-movie-review.herokuapp.com/delete-movie" , details)
     .then(res => {
         console.log(res.data);
         toast.info("Deleted Successfully!");
     })
 
-    await axios.get(`https://popcorn-movie-review.herokuapp/liked-movies/${user}`)
+    await axios.get(`https://popcorn-movie-review.herokuapp.com/liked-movies/${user}`)
          .then(res => {
              setLikedMovies(res.data);
              console.log(likedMovies);

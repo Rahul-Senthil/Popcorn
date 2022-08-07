@@ -31,7 +31,7 @@ const searchInput = React.createRef();
 const handleSearch = async(e) => {
     e.preventDefault();
     const query = searchInput.current.value;
-    const url = `http://www.omdbapi.com/?t=${query}&apikey=${api_key}`;
+    const url = `https://www.omdbapi.com/?t=${query}&apikey=${api_key}`;
     const response = await fetch(url);
     const movieData = await response.json();
     console.log(movieData);
