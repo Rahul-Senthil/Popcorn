@@ -1,0 +1,10 @@
+.recent-movies {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recent-poster {
+  margin-left: 65px;
+  margin-top: 50px;
+  width: 300px;
+}
