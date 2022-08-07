@@ -26,7 +26,7 @@ const Account = () => {
             var jwt = res.data.token;
             console.log(jwt);
             localStorage.setItem('myToken', jwt);
-            window.location.href = '/review';
+            window.location.href = '/';
         })
         .catch(err => {
             console.log(err);
@@ -40,7 +40,7 @@ const Account = () => {
             password: loginPassword.current.value 
         }
 
-        await axios.post("https://popcorn-movie-review.herokuapp/login", loginUser)
+        await axios.post("https://popcorn-movie-review.herokuapp.com/login", loginUser)
         .then(res => {
             var jwt = res.data.token;
             console.log(jwt);
@@ -48,7 +48,7 @@ const Account = () => {
             // var jwt1 = localStorage.getItem('myToken');
             // const user = jwtDecode(jwt1);
             // console.log(user.currentUser);
-            window.location.href = '/review';
+            window.location.href = '/';
             // console.log(user.email);
             // console.log(loginEmail.current.value);
             // if(user.email === loginEmail.current.value)
