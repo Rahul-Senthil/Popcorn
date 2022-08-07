@@ -31,9 +31,10 @@ const Navbar = () => {
                   <li className="nav-item">
                     <NavLink  to="/review" className="nav-link">Review</NavLink>
                   </li>
+                  {id && 
                   <li className="nav-item">
                     <NavLink to="/liked-movies" className="nav-link" aria-current="page">Wishlist</NavLink>
-                  </li>
+                  </li>}
                   {id ? <li className="nav-item">
                       <NavLink to="#" className="nav-link" aria-current="page" onClick={logoutUser}>Log Out</NavLink>
                     </li> :
