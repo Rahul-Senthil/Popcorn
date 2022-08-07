@@ -38,7 +38,7 @@ const Content = (props) => {
             {
                 const cUser = jwtDecode(jwt1);
                 setUser(cUser.currentUser);
-                await axios.get(`http://localhost:8000/liked-movies/${cUser.currentUser}`)
+                await axios.get(`https://popcorn-movie-review.herokuapp/liked-movies/${cUser.currentUser}`)
                 .then(res => {
                     setLikedMovies(res.data);
                     console.log(likedMovies);
@@ -68,7 +68,7 @@ const Content = (props) => {
                     movie
                 }
                 console.log(details);
-                await axios.post("http://localhost:8000/add-movie" , details)
+                await axios.post("https://popcorn-movie-review.herokuapp/add-movie" , details)
                 .then(res => {
                     console.log(res.data);
                     toast.success("Added to your wishlist");

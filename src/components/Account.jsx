@@ -20,7 +20,7 @@ const Account = () => {
             password: password.current.value 
         }
 
-        await axios.post("http://localhost:8000/add-user", newUser)
+        await axios.post("https://popcorn-movie-review.herokuapp/add-user", newUser)
         .then(res => {
             console.log(res.data);
             var jwt = res.data.token;
@@ -40,7 +40,7 @@ const Account = () => {
             password: loginPassword.current.value 
         }
 
-        await axios.post("http://localhost:8000/login", loginUser)
+        await axios.post("https://popcorn-movie-review.herokuapp/login", loginUser)
         .then(res => {
             var jwt = res.data.token;
             console.log(jwt);
